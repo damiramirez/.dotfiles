@@ -12,6 +12,13 @@ vim.opt.backup = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- Auto-reload files when changed outside of Neovim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
 -- Common LSP config
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
