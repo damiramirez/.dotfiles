@@ -11,6 +11,8 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.list = true
+vim.opt.listchars = { space = "·" }
 
 -- Auto-reload files when changed outside of Neovim
 vim.opt.autoread = true
